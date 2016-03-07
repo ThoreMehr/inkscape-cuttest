@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Cuttest</_name>
+  <id>eu.flk.laser.cuttest</id>
+
+  <dependency type="executable" location="extensions">polygon.py</dependency>
+  <param name="unit" _gui-text="Unit" type="optiongroup" appearance="minimal">
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="in">in</option>
+  </param>
+
+  <param name="line_length" type="int" min="1" max="20" _gui-text="raster">10</param>
+  <param name="speed_min" type="int" min="100" max="100000" _gui-text="minimal speed">100</param>
+  <param name="speed_max" type="int" min="100" max="100000" _gui-text="maximal speed">10000</param>
+  <param name="speed_step" type="int" min="100" max="100000" _gui-text="speed step">500</param>
+  <param name="rows" type="int" min="1" max="100" _gui-text="rows">1</param>
+  <param name="intensity" type="int" min="1" max="100" _gui-text="intensity">85</param>
+ 
+  <param name="lasertag" type="string" _gui-text="lasertag">=pass%n:%s:%i:%c=</param>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="Laser Tools" />
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">cuttest.py</command>
+  </script>
+</inkscape-extension>
